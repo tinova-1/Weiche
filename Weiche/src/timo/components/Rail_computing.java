@@ -1,19 +1,27 @@
+package timo.components;
+
+import timo.Weiche;
+import timo.geometry.Arc;
+import timo.geometry.Circle;
+import timo.vector.Line;
+import timo.vector.Point;
+import timo.vector.Vector;
 
 public class Rail_computing {
-	static double a = Weiche.angle;
-	static double len = Weiche.length;
-	static double gauge = Weiche.gauge;
-	static double flange = Weiche.flange_freedom;
-	static double frog = Weiche.frog_length;
-	static double guide = Weiche.guide_length;
-	static double approach = Weiche.verlaengerung;
+	public static double a = Weiche.angle;
+	public static double len = Weiche.length;
+	public static double gauge = Weiche.gauge;
+	public static double flange = Weiche.flange_freedom;
+	public static double frog = Weiche.frog_length;
+	public static double guide = Weiche.guide_length;
+	public static double approach = Weiche.verlaengerung;
 
-	static double r;
-	static double r_outer;
-	static double r_inner;
+	public static double r;
+	public static double r_outer;
+	public static double r_inner;
 
-	static void compute() {
-		// gauge = Weiche.gauge + versatz;
+	public static void compute() {
+		// gauge = timo.Weiche.gauge + versatz;
 
 		r = Weiche.radius;
 		r_outer = r + gauge / 2.;
@@ -38,7 +46,7 @@ public class Rail_computing {
 		Line inner_straight = new Line(p0r, p1r);
 		Line inner_flange = new Line(p0rf, p1rf);
 
-		// Herstückspitze
+		// Herstï¿½ckspitze
 		Point p3 = Vector.intersectionLC(inner_straight, outer_radius).get(0);
 		Point p4 = Vector.intersectionLC(inner_flange, outer_radius).get(0);
 		Point p5 = Vector.intersectionLC(inner_straight, outer_flange).get(0);

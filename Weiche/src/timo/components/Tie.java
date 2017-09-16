@@ -1,3 +1,7 @@
+package timo.components;
+
+import timo.Weiche;
+
 public class Tie {
 
 	double xpos, ypos, rot, len, wid;

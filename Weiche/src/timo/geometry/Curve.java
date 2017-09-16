@@ -1,31 +1,35 @@
+package timo.geometry;
+
+import timo.vector.Point;
+
 import java.util.ArrayList;
 
 public class Curve {
 	String name = "";
 	String type = "";
 
-	ArrayList<Point> getVerts(int res) {
+	public ArrayList<Point> getVerts(int res) {
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
 		return ausgabe;
 	}
 
-	String export_obj() {
+	public String export_obj() {
 		return "";
 	}
 
-	void setName(String _name) {
+	public void setName(String _name) {
 		name = _name;
 	}
-	
-	String getName() {
+
+	public String getName() {
 		return name;
 	}
-	
-	void setType(String _type) {
+
+	public void setType(String _type) {
 		this.type = _type;
 	}
-	
-	String getType() {
+
+	public String getType() {
 		return this.type;
 	}
 }

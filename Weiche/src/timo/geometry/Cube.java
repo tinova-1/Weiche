@@ -1,9 +1,15 @@
+package timo.geometry;
+
+import timo.vector.Line;
+import timo.vector.Point;
+import timo.vector.Vector;
+
 import java.util.ArrayList;
 
 public class Cube extends Body {
 	String tie_type = "";
 
-	Cube(Point c, double[] dimensions, double zrot, int method) {
+	public Cube(Point c, double[] dimensions, double zrot, int method) {
 		/*
 		 * method 0: c is center of cube method 1: c is on lower left corner of cube
 		 * method 2: c is center of upper plane method 3: c is center of front lower
@@ -58,7 +64,7 @@ public class Cube extends Body {
 		return Vector.distPP(verts.get(0), verts.get(1));
 	}
 
-	// represents Cube as line to compute Kleineisen
+	// represents timo.geometry.Cube as line to compute timo.components.Kleineisen
 	public Line represent() {
 		Point c = Vector.middle(this.verts.get(0), this.verts.get(3));
 		Point dir = Vector.subtract(this.getVerts().get(0), this.getVerts().get(2));

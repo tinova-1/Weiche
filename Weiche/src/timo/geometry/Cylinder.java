@@ -1,11 +1,13 @@
+package timo.geometry;
 
+import timo.vector.Point;
 
 public class Cylinder extends Body{
 	double r; // radius
 	double h; // height
 	int v; // number of verticies in one circle
 
-	Cylinder(double _r, double _h, int _v) {
+	public Cylinder(double _r, double _h, int _v) {
 		super();
 		r = _r;
 		h = _h;

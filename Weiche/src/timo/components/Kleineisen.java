@@ -1,3 +1,11 @@
+package timo.components;
+
+import timo.Weiche;
+import timo.geometry.Body;
+import timo.geometry.Cube;
+import timo.geometry.Cylinder;
+import timo.vector.Point;
+
 import java.util.ArrayList;
 
 public class Kleineisen {
@@ -31,7 +39,7 @@ public class Kleineisen {
 		}
 	}
 
-	String export_obj() {
+	public String export_obj() {
 		String ausgabe = "";
 		for (int i = 0; i < bodies.size(); i++) {
 			ausgabe += bodies.get(i).export_obj();

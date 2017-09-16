@@ -1,6 +1,16 @@
+package timo.components;
+
+import timo.Weiche;
+import timo.geometry.Arc;
+import timo.geometry.Cube;
+import timo.geometry.Curve;
+import timo.vector.Line;
+import timo.vector.Point;
+import timo.vector.Vector;
+
 import java.util.ArrayList;
 
-public class Kleineisen_berechnen {
+public class KleineisenCalculator {
 	static ArrayList<Cube> tie_list = Weiche.tie_list;
 	static ArrayList<Curve> rail_list = Weiche.rail_list;
 	static double tie_dist = Weiche.tie_dist;
@@ -8,26 +18,26 @@ public class Kleineisen_berechnen {
 	public static ArrayList<Kleineisen> berechnen() {
 		ArrayList<Kleineisen> ausgabe = new ArrayList<Kleineisen>();
 
-		// ArrayList<Point> test = new ArrayList<Point>();
+		// ArrayList<timo.vector.Point> test = new ArrayList<timo.vector.Point>();
 		// for(int i=0; i<tie_list.size();i++) {
 		// test.add(tie_list.get(i).represent().getp1());
 		// }
 		// for (int i = 0; i <test.size(); i++) {
-		// tie_list.add(Cube.testCube(test.get(i)));
+		// tie_list.add(timo.geometry.Cube.testCube(test.get(i)));
 		// }
 		//
 
-		// Point points = Vector.intersection(tie_list.get(10).represent(),
+		// timo.vector.Point points = timo.vector.Vector.intersection(tie_list.get(10).represent(),
 		// rail_list.get(0)).get(0);
 
 		// for(int i=0; i<tie_list.size(); i++) {
 		//
-		// ArrayList<Point> points =
-		// Vector.intersArray(tie_list.get(i).represent(),rail_list);
+		// ArrayList<timo.vector.Point> points =
+		// timo.vector.Vector.intersArray(tie_list.get(i).represent(),rail_list);
 		// for(int j = 0; j<points.size();j++) {
 		// //System.out.println(points.get(j).getx()+" "+points.get(j).gety());
-		// Kleineisen newklein = new Kleineisen();
-		// Point pos = points.get(j);
+		// timo.components.Kleineisen newklein = new timo.components.Kleineisen();
+		// timo.vector.Point pos = points.get(j);
 		// newklein.move(pos.getx(),pos.gety(),pos.getz());
 		// ausgabe.add(newklein);
 		// }
@@ -69,7 +79,7 @@ public class Kleineisen_berechnen {
 
 						Point arc_center = rail.getc();
 						double arc_angle = Math.atan((p.gety() - arc_center.gety()) / (p.getx() - arc_center.getx()));
-						// Periodizität des Tangens
+						// Periodizitï¿½t des Tangens
 						if (p.getx() - arc_center.getx() < 0.) {
 							arc_angle += Math.PI;
 						}

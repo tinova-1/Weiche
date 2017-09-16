@@ -1,3 +1,7 @@
+package timo.geometry;
+
+import timo.vector.Point;
+
 import java.util.ArrayList;
 
 public class Arc extends Circle {
@@ -7,22 +11,22 @@ public class Arc extends Circle {
 
 	// input: angles as seen from turnout, st and en values: correct mathematical
 	// values
-	Arc(Point center, double radius, double start, double end) {
+	public Arc(Point center, double radius, double start, double end) {
 		super(center, radius);
 
 		st = Math.PI * .5-end;
 		en = Math.PI * .5-start;
 	}
 
-	double getStart() {
+	public double getStart() {
 		return st;
 	}
 
-	double getEnd() {
+	public double getEnd() {
 		return en;
 	}
 
-	ArrayList<Point> getVerts(int res) {
+	public ArrayList<Point> getVerts(int res) {
 		// res: resolution (number of verts in one circle)
 		ArrayList<Point> verts = new ArrayList<Point>();
 		double dphi = 2. * Math.PI / (double) res;
@@ -37,7 +41,7 @@ public class Arc extends Circle {
 		return verts;
 	}
 
-	String export_obj() {
+	public String export_obj() {
 		String ausgabe = "";
 		ArrayList<Point> verts = this.getVerts(48);
 		for (int i = 0; i < verts.size() - 1; i++) {

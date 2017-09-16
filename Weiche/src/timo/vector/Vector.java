@@ -1,8 +1,14 @@
+package timo.vector;
+
+import timo.geometry.Arc;
+import timo.geometry.Circle;
+import timo.geometry.Curve;
+
 import java.util.ArrayList;
 
 public class Vector {
 
-	static ArrayList<Point> intersArray(Curve c1, ArrayList<Curve> c2) {
+	public static ArrayList<Point> intersArray(Curve c1, ArrayList<Curve> c2) {
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
 		for (int i = 0; i < c2.size(); i++) {
 			ausgabe.addAll(intersection(c1, c2.get(i)));
@@ -10,7 +16,7 @@ public class Vector {
 		return ausgabe;
 	}
 
-	static ArrayList<Point> intersection(Curve c1, Curve c2) {
+	public static ArrayList<Point> intersection(Curve c1, Curve c2) {
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
 		if (c1 instanceof Line && c2 instanceof Line) {
 			ausgabe.addAll(intersectionLS((Line) c1, (Line) c2));
@@ -26,7 +32,7 @@ public class Vector {
 		return ausgabe;
 	}
 
-	static Point intersectionLL(Line line1, Line line2) {
+	public static Point intersectionLL(Line line1, Line line2) {
 		double a1 = line1.geta();
 		double b1 = line1.getb();
 		double c1 = line1.getc();
@@ -42,7 +48,7 @@ public class Vector {
 	}
 
 	// s = Strecke
-	static ArrayList<Point> intersectionLS(Line l, Line s) {
+	public static ArrayList<Point> intersectionLS(Line l, Line s) {
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
 		Point p = intersectionLL(l, s); // Schnittpunkt beider Geraden
 		double _P1P2 = s.getDir().len();
@@ -52,7 +58,7 @@ public class Vector {
 		return ausgabe;
 	}
 
-	static ArrayList<Point> intersectionLC(Line line, Circle circle) {
+	public static ArrayList<Point> intersectionLC(Line line, Circle circle) {
 		// Bezeichnungen siehe Wikipedia
 		double a = line.geta();
 		double b = line.getb();
@@ -79,7 +85,7 @@ public class Vector {
 		return s;
 	}
 
-	static ArrayList<Point> intersectionLA(Line line, Arc arc) {
+	public static ArrayList<Point> intersectionLA(Line line, Arc arc) {
 		// intersections between line and circle, to test if it line crosses arc
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
 		Point arc_center = arc.getc();
@@ -87,7 +93,7 @@ public class Vector {
 		for (int i = 0; i < inters.size(); i++) {
 			Point p = inters.get(i);
 			double arc_angle = Math.atan((p.gety() - arc_center.gety()) / (p.getx() - arc_center.getx()));
-			//Periodizität des Tangens
+			//Periodizitï¿½t des Tangens
 			if(p.getx()-arc_center.getx()<0.) {
 				arc_angle +=Math.PI;
 			}
@@ -102,7 +108,7 @@ public class Vector {
 		return ausgabe;
 	}
 
-	static double distPP(Point p1, Point p2) {
+	public static double distPP(Point p1, Point p2) {
 		double x1 = p1.getx();
 		double y1 = p1.gety();
 		double z1 = p1.getz();
@@ -114,13 +120,13 @@ public class Vector {
 		return rt(sq(x2 - x1) + sq(y2 - y1) + sq(z2 - z1));
 	}
 
-	static double distPL(Point p, Line l) {
+	public static double distPL(Point p, Line l) {
 		Point a = l.getp1();
 		Point b = l.getDir();
 		return Vector.crossP(Vector.subtract(p, a), b).len() / b.len();
 	}
 
-	static double scalar(Point p1, Point p2) {
+	public static double scalar(Point p1, Point p2) {
 		double a1 = p1.getx();
 		double a2 = p1.gety();
 		double a3 = p1.getz();
@@ -130,7 +136,7 @@ public class Vector {
 		return a1 * b1 + a2 * b2 + a3 * b3;
 	}
 
-	static Point crossP(Point p1, Point p2) {
+	public static Point crossP(Point p1, Point p2) {
 		double x = p1.gety() * p2.getz() - p2.gety() * p1.getz();
 		double y = p1.getz() * p2.getx() - p2.getz() * p1.getx();
 		double z = p1.getx() * p2.gety() - p2.getx() * p1.gety();
@@ -150,32 +156,32 @@ public class Vector {
 		return rt(sq(a) + sq(b));
 	}
 
-	static Point add(Point p1, Point p2) {
+	public static Point add(Point p1, Point p2) {
 		double x = p2.getx() + p1.getx();
 		double y = p2.gety() + p1.gety();
 		double z = p2.getz() + p1.getz();
 		return new Point(x, y, z);
 	}
 
-	static Point subtract(Point p1, Point p2) {
+	public static Point subtract(Point p1, Point p2) {
 		double x = p2.getx() - p1.getx();
 		double y = p2.gety() - p1.gety();
 		double z = p2.getz() - p1.getz();
 		return new Point(x, y, z);
 	}
 
-	static Point multiply(Point p1, double factor) {
+	public static Point multiply(Point p1, double factor) {
 		double x = p1.getx() * factor;
 		double y = p1.gety() * factor;
 		double z = p1.getz() * factor;
 		return new Point(x, y, z);
 	}
 
-	static Point middle(Point p1, Point p2) {
+	public static Point middle(Point p1, Point p2) {
 		return Vector.multiply(Vector.add(p1, p2), .5);
 	}
 
-	static double getAngle(Point a, Point b) {
+	public static double getAngle(Point a, Point b) {
 		return Math.acos(Vector.scalar(a, b) / (a.len() * b.len()));
 	}
 }

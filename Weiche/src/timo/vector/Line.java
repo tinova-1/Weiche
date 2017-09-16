@@ -1,3 +1,7 @@
+package timo.vector;
+
+import timo.geometry.Curve;
+
 import java.util.ArrayList;
 
 public class Line extends Curve {
@@ -9,7 +13,7 @@ public class Line extends Curve {
 	double b;
 	double c;
 
-	Line(Point pos1, Point pos2) {
+	public Line(Point pos1, Point pos2) {
 		p1 = pos1;
 		p2 = pos2;
 		direction = Vector.subtract(p1, p2);
@@ -21,11 +25,11 @@ public class Line extends Curve {
 
 	// Koordinatenform ax+by=c
 
-	Point getDir() {
+	public Point getDir() {
 		return direction;
 	}
 
-	Point getp1() {
+	public Point getp1() {
 		return p1;
 	}
 
@@ -45,16 +49,16 @@ public class Line extends Curve {
 		return c;
 	}
 
-	ArrayList<Point> getVerts(int res) {
+	public ArrayList<Point> getVerts(int res) {
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
 		ausgabe.add(getp1());
 		ausgabe.add(getp2());
 		return ausgabe;
 	}
 
-	String export_obj() {
+	public String export_obj() {
 		String ausgabe = "";
-		ausgabe += "o Line\n";
+		ausgabe += "o timo.vector.Line\n";
 		ausgabe += p1.export_obj();
 		ausgabe += p2.export_obj();
 		ausgabe += "f -1 -2\n";

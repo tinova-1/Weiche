@@ -1,22 +1,25 @@
+package timo.vector;
+
+import timo.geometry.Curve;
 
 public class Point extends Curve {
 
 	double x = 0., y = 0., z = 0.; // x y and z coordinates
 
-	Point(double _x, double _y, double _z) {
+	public Point(double _x, double _y, double _z) {
 		x = _x;
 		y = _y;
 		z = _z;
 	}
 
-	Point(double[] xyz) {
+	public Point(double[] xyz) {
 		x = xyz[0];
 		y = xyz[1];
 		z = xyz[2];
 	}
 
-	Point() {
-		// Point with coordinates [0,0,0]
+	public Point() {
+		// timo.vector.Point with coordinates [0,0,0]
 	}
 
 	public void move(double dx, double dy, double dz) {
@@ -35,7 +38,7 @@ public class Point extends Curve {
 		double r = Vector.pythargoras(x, y);
 		double phi = Math.atan(y / x);
 
-		// Periodizit‰t des Tangens
+		// Periodizit√§t des Tangens
 		if (x < 0.)
 			phi += Math.PI;
 
@@ -75,7 +78,7 @@ public class Point extends Curve {
 		return new Point();
 	}
 
-	String export_obj() {
+	public String export_obj() {
 		return "v " + x + " " + y + " " + z + "\n";
 	}
 }

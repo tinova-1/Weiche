@@ -1,3 +1,7 @@
+package timo.geometry;
+
+import timo.vector.Point;
+
 import java.util.ArrayList;
 
 public class Body {
@@ -13,8 +17,8 @@ public class Body {
 	
 	public ArrayList<Point> verts = new ArrayList<Point>();
 
-	String export_obj() {
-		System.out.println("Kein OBJ-Export in Klasse Body!");
+	public String export_obj() {
+		System.out.println("Kein OBJ-Export in Klasse timo.geometry.Body!");
 		return "";
 	}
 

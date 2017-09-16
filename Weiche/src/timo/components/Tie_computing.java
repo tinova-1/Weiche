@@ -1,18 +1,24 @@
+package timo.components;
+
+import timo.Weiche;
+import timo.geometry.Cube;
+import timo.vector.Point;
+
 import java.util.ArrayList;
 
 public class Tie_computing {
 
-	static double w_radius = Weiche.radius;
-	static double winkel = Weiche.angle;
-	static double l = Weiche.length;
-	static double s_laenge = Weiche.tie_length;
-	static double s_abstand = Weiche.tie_dist;
-	static double s_breite = Weiche.tie_width;
-	static double s_hoehe = Weiche.tie_height;
-	static double verlaengerung = Weiche.verlaengerung;
-	static double l_max = Weiche.longest_tie;
+	public static double w_radius = Weiche.radius;
+	public static double winkel = Weiche.angle;
+	public static double l = Weiche.length;
+	public static double s_laenge = Weiche.tie_length;
+	public static double s_abstand = Weiche.tie_dist;
+	public static double s_breite = Weiche.tie_width;
+	public static double s_hoehe = Weiche.tie_height;
+	public static double verlaengerung = Weiche.verlaengerung;
+	public static double l_max = Weiche.longest_tie;
 
-	static void berechnen() {
+	public static void berechnen() {
 		ArrayList<Cube> weichenSchwellenband = weichenSchwellenband();
 		for (int i = 0; i < weichenSchwellenband.size(); i++) {
 			weichenSchwellenband.get(i).setType("turnout");
@@ -44,7 +50,7 @@ public class Tie_computing {
 		Weiche.tie_list.addAll(verlaengerungSchwelle);
 	}
 
-	static ArrayList<Cube> geradesSchwellenband(double start, double end) {
+	public static ArrayList<Cube> geradesSchwellenband(double start, double end) {
 		ArrayList<Cube> ausgabe = new ArrayList<Cube>();
 		double[] dimensions = { s_breite, s_laenge, s_hoehe };
 		if (start <= end) {
@@ -59,7 +65,7 @@ public class Tie_computing {
 		return ausgabe;
 	}
 
-	static ArrayList<Cube> gebogenesSchwellenband(double start, double end, double radius) {
+	public static ArrayList<Cube> gebogenesSchwellenband(double start, double end, double radius) {
 		ArrayList<Cube> ausgabe = new ArrayList<Cube>();
 		double dphi = s_abstand / radius; // delta phi
 		for (double phi = start; phi <= end; phi += dphi) {
@@ -73,7 +79,7 @@ public class Tie_computing {
 		return ausgabe;
 	}
 
-	static ArrayList<Cube> weichenSchwellenband() {
+	public static ArrayList<Cube> weichenSchwellenband() {
 		// boolean schwellenband_erstellt = false; // Speichert, ob
 		// Einzel-Schwellenbänder bereits erstellt wurden
 		double s_radius_rechts = 2. * w_radius + s_laenge / 2.;

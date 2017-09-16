@@ -1,4 +1,4 @@
-/*import java.io.File;
+package timo.io;/*import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ public class Export_svg {
 		}
 
 		/////////// Ties
-		ArrayList<Tie> tie_list = Weiche.tie_list;
+		ArrayList<timo.components.Tie> tie_list = timo.Weiche.tie_list;
 		for (int j = 0; j < tie_list.size(); j++) {
-			Tie i = tie_list.get(j);
+			timo.components.Tie i = tie_list.get(j);
 
 			double svg_x = i.xpos - i.wid / 2.;
 			double svg_y = i.ypos - i.len / 2.;
@@ -41,12 +41,12 @@ public class Export_svg {
 		}
 
 		/////////// Rail
-		ArrayList<Curve> rail_list = Weiche.rail_list;
+		ArrayList<timo.geometry.Curve> rail_list = timo.Weiche.rail_list;
 		for (int j = 0; j < rail_list.size(); j++) {
-			Curve i = rail_list.get(j);
+			timo.geometry.Curve i = rail_list.get(j);
 
-			if (i instanceof Line) {
-				Line e = (Line) i;
+			if (i instanceof timo.vector.Line) {
+				timo.vector.Line e = (timo.vector.Line) i;
 				double x = e.getp1()[0];
 				double y = e.getp1()[1];
 
@@ -58,8 +58,8 @@ public class Export_svg {
 						"       style=\"fill:none;stroke:#000000;stroke-width:0.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1\"\n"+
 						"       d=\"m " + x + "," + y + " " + dx + "," + dy + "\"\n"+
 						"       id=\"line"+j+"\" />\n");
-			} else if(i instanceof Arc) {
-				Arc e = (Arc) i;
+			} else if(i instanceof timo.geometry.Arc) {
+				timo.geometry.Arc e = (timo.geometry.Arc) i;
 				double r = e.getr();
 				double start = e.getStart()-Math.PI/2.;
 				double end = e.getEnd()-Math.PI/2.;
