@@ -36,7 +36,7 @@ public class KleineisenCalculator {
 		// timo.vector.Vector.intersArray(tie_list.get(i).represent(),rail_list);
 		// for(int j = 0; j<points.size();j++) {
 		// //System.out.println(points.get(j).getx()+" "+points.get(j).gety());
-		// timo.components.Kleineisen newklein = new timo.components.Kleineisen();
+		// timo.geometry.Kleineisen newklein = new timo.geometry.Kleineisen();
 		// timo.vector.Point pos = points.get(j);
 		// newklein.move(pos.getx(),pos.gety(),pos.getz());
 		// ausgabe.add(newklein);

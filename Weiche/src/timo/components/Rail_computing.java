@@ -3,6 +3,7 @@ package timo.components;
 import timo.Weiche;
 import timo.geometry.Arc;
 import timo.geometry.Circle;
+import timo.geometry.Curve;
 import timo.vector.Line;
 import timo.vector.Point;
 import timo.vector.Vector;

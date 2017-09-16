@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Import_obj {
 
-	File obj = new File("timo.components.Kleineisen.obj");
+	File obj = new File("timo.geometry.Kleineisen.obj");
 	Scanner sc = new Scanner(obj);
 
 	public Import_obj() throws FileNotFoundException {

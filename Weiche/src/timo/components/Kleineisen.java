@@ -18,7 +18,7 @@ public class Kleineisen {
 
 	public Kleineisen() {
 		double[] dimensions = { l, b, h };
-		Body platte = new Cube(Point.origin(), dimensions, 0., 2);
+		Body platte = new Cube(Point.origin(), dimensions, 0., Cube.View.CENTER_UPPER_PLANE);
 		Body schraube = new Cylinder(cyl_d / 2., cyl_h, 6);
 
 		bodies.add(platte);

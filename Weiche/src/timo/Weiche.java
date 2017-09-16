@@ -33,15 +33,15 @@ public class Weiche {
 	public static final double tie_height = 1;
 	public static final double longest_tie = 40; //length of the longest tie
 
-	public static final double klein_h = .1; // Höhe timo.components.Kleineisen
-	public static final double klein_l = 1; // Länge timo.components.Kleineisen
-	public static final double klein_b = 1; // Breite timo.components.Kleineisen
+	public static final double klein_h = .1; // Höhe timo.geometry.Kleineisen
+	public static final double klein_l = 1; // Länge timo.geometry.Kleineisen
+	public static final double klein_b = 1; // Breite timo.geometry.Kleineisen
 	public static final double klein_cyl_h = .3; // Höhe Schraube
 	public static final double klein_cyl_d = .5;// Durchmesser SChraube
 
-	public static ArrayList<Cube> tie_list = new ArrayList<Cube>();
-	public static ArrayList<Curve> rail_list = new ArrayList<Curve>();
-	public static ArrayList<Kleineisen> klein_list = new ArrayList<Kleineisen>();
+	public static ArrayList<Cube> tie_list = new ArrayList<>();
+	public static ArrayList<Curve> rail_list = new ArrayList<>();
+	public static ArrayList<Kleineisen> klein_list = new ArrayList<>();
 
 	public static void main(String args[]) throws IOException {
 		Tie_computing.berechnen();

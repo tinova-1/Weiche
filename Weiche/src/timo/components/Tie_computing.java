@@ -55,11 +55,11 @@ public class Tie_computing {
 		double[] dimensions = { s_breite, s_laenge, s_hoehe };
 		if (start <= end) {
 			for (double x = start; x <= end; x += s_abstand) {
-				ausgabe.add(new Cube(new Point(x, 0., 0.), dimensions, 0., 2));
+				ausgabe.add(new Cube(new Point(x, 0., 0.), dimensions, 0., Cube.View.CENTER_UPPER_PLANE));
 			}
 		} else {
 			for (double x = start; x >= end; x -= s_abstand) {
-				ausgabe.add(new Cube(new Point(x, 0., 0.), dimensions, 0., 2));
+				ausgabe.add(new Cube(new Point(x, 0., 0.), dimensions, 0., Cube.View.CENTER_UPPER_PLANE));
 			}
 		}
 		return ausgabe;
@@ -70,7 +70,7 @@ public class Tie_computing {
 		double dphi = s_abstand / radius; // delta phi
 		for (double phi = start; phi <= end; phi += dphi) {
 			double[] dimensions = { s_breite, s_laenge, s_hoehe };
-			Cube newtie = new Cube(Point.origin(), dimensions, 0., 2);
+			Cube newtie = new Cube(Point.origin(), dimensions, 0., Cube.View.CENTER_UPPER_PLANE);
 			newtie.move(0., radius, 0.);
 			newtie.rotate(-phi);
 			newtie.move(0., -radius, 0.);
@@ -92,7 +92,7 @@ public class Tie_computing {
 		for (winkel = 0.; s_laenge_neu <= l_max; winkel += winkelschritt) {
 			s_laenge_neu = (s_radius_rechts / Math.cos(winkel) - 2. * w_radius) * 2.;
 			double[] dimensions = { s_breite, s_laenge_neu, s_hoehe };
-			Cube newtie = new Cube(Point.origin(), dimensions, 0., 2);
+			Cube newtie = new Cube(Point.origin(), dimensions, 0., Cube.View.CENTER_UPPER_PLANE);
 			newtie.move(0., w_radius * 2., 0.);
 			newtie.rotate(-winkel);
 			newtie.move(0., -w_radius * 2., 0.);

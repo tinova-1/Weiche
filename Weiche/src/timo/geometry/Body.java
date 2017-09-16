@@ -80,7 +80,7 @@ public class Body {
 			dimensions[i]=max[i]-min[i];
 		}
 		Point c = new Point(min);
-		return new Cube(c,dimensions,0.,1);
+		return new Cube(c,dimensions,0., Cube.View.LOWER_LEFT_CORNER);
 	}
 
 }

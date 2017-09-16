@@ -19,12 +19,12 @@ public class Export_obj {
 		FileWriter ausgabe = new FileWriter(new File("ausgabe.obj"));
 
 		for (int i = 0; i < tie_list.size(); i++) {
-			ausgabe.write("g timo.components.Tie" + i + "\n\n");
+			ausgabe.write("g timo.geometry.Tie" + i + "\n\n");
 			ausgabe.write(tie_list.get(i).export_obj());
 		}
 
 		for (int i = 0; i < klein_list.size(); i++) {
-			ausgabe.write("g timo.components.Kleineisen"+i+"\n\n");
+			ausgabe.write("g timo.geometry.Kleineisen"+i+"\n\n");
 			ausgabe.write(klein_list.get(i).export_obj());
 		}
 		

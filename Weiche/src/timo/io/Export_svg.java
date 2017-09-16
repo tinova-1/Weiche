@@ -21,9 +21,9 @@ public class Export_svg {
 		}
 
 		/////////// Ties
-		ArrayList<timo.components.Tie> tie_list = timo.Weiche.tie_list;
+		ArrayList<timo.geometry.Tie> tie_list = timo.Weiche.tie_list;
 		for (int j = 0; j < tie_list.size(); j++) {
-			timo.components.Tie i = tie_list.get(j);
+			timo.geometry.Tie i = tie_list.get(j);
 
 			double svg_x = i.xpos - i.wid / 2.;
 			double svg_y = i.ypos - i.len / 2.;
