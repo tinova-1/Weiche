@@ -1,6 +1,7 @@
-package timo.geometry;
+package weiche.geometry;
 
-import timo.vector.Point;
+import timo.geometry.Cube;
+import timo.geometry.Cube.View;
 
 import java.util.ArrayList;
 

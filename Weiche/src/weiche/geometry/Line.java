@@ -1,4 +1,4 @@
-package timo.vector;
+package weiche.geometry;
 
 import timo.geometry.Curve;
 

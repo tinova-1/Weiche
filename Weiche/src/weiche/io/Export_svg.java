@@ -1,4 +1,4 @@
-package timo.io;/*import java.io.File;
+package weiche.io;/*import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;

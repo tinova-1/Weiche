@@ -1,21 +1,19 @@
-package timo.components;
+package weiche.components;
 
-import timo.Weiche;
-import timo.geometry.Arc;
-import timo.geometry.Cube;
-import timo.geometry.Curve;
-import timo.vector.Line;
-import timo.vector.Point;
-import timo.vector.Vector;
+import weiche.components.Kleineisen;
+import weiche.geometry.*;
+import weiche.model.Weiche;
 
 import java.util.ArrayList;
 
-public class KleineisenCalculator {
-	static ArrayList<Cube> tie_list = Weiche.tie_list;
-	static ArrayList<Curve> rail_list = Weiche.rail_list;
-	static double tie_dist = Weiche.tie_dist;
 
-	public static ArrayList<Kleineisen> berechnen() {
+public class KleineisenCalculator {
+
+	public void berechnen() {
+		ArrayList<Cube> tie_list = Weiche.getTie_list();
+		ArrayList<Curve> rail_list = Weiche.getRail_list();
+		double tie_dist = Weiche.getTie_dist();
+
 		ArrayList<Kleineisen> ausgabe = new ArrayList<Kleineisen>();
 
 		// ArrayList<timo.vector.Point> test = new ArrayList<timo.vector.Point>();
@@ -92,7 +90,7 @@ public class KleineisenCalculator {
 				}
 			}
 		}
-		return ausgabe;
+		Weiche.klein_list = ausgabe;
 	}
 
 	private static boolean match(Cube tie, Curve rail) {

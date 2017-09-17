@@ -1,4 +1,4 @@
-package nils.geometry;
+package weiche.geometry;
 
 public class Cylinder {
 }

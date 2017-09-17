@@ -1,7 +1,5 @@
-package timo.vector;
+package weiche.geometry;
 
-import timo.geometry.Arc;
-import timo.geometry.Circle;
 import timo.geometry.Curve;
 
 import java.util.ArrayList;

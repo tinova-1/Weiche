@@ -1,8 +1,8 @@
-package timo.components;
+package weiche.components;
 
 import timo.Weiche;
 import timo.geometry.Cube;
-import timo.vector.Point;
+import weiche.geometry.Point;
 
 import java.util.ArrayList;
 

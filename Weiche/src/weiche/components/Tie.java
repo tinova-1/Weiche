@@ -1,4 +1,4 @@
-package timo.components;
+package weiche.components;
 
 import timo.Weiche;
 
