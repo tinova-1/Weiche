@@ -1,8 +1,6 @@
-package timo.geometry;
+package weiche.geometry;
 
-import timo.vector.Point;
-
-public class Cylinder extends Body{
+public class Cylinder extends Body {
 	double r; // radius
 	double h; // height
 	int v; // number of verticies in one circle
@@ -24,7 +22,6 @@ public class Cylinder extends Body{
 			verts.add(new Point(p.getx(), p.gety(), p.getz() + h));
 		}
 	}
-
 
 	public String export_obj() {
 		String ausgabe = "";

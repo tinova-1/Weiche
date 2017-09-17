@@ -1,21 +1,27 @@
-package timo.geometry;
+package weiche.geometry;
 
-import timo.vector.Point;
+import weiche.geometry.Cube;
 
 import java.util.ArrayList;
 
 
 public class Body {
+<<<<<<< HEAD:Weiche/src/timo/geometry/Body.java
 	String type;
 	
 	void setType (String _type) {
+=======
+	String type = "";
+
+	void setType(String _type) {
+>>>>>>> master:Weiche/src/weiche/geometry/Body.java
 		this.type = _type;
 	}
-	
+
 	String getType() {
 		return this.type;
 	}
-	
+
 	public ArrayList<Point> verts = new ArrayList<Point>();
 
 	public String export_obj() {
@@ -72,16 +78,16 @@ public class Body {
 		}
 		return ausgabe;
 	}
-	
+
 	public Cube boundingBox() {
 		double[] min = this.min();
 		double[] max = this.max();
 		double[] dimensions = new double[3];
 		for (int i = 0; i < dimensions.length; i++) {
-			dimensions[i]=max[i]-min[i];
+			dimensions[i] = max[i] - min[i];
 		}
 		Point c = new Point(min);
-		return new Cube(c,dimensions,0., Cube.View.LOWER_LEFT_CORNER);
+		return new Cube(c, dimensions, 0., Cube.View.LOWER_LEFT_CORNER);
 	}
 
 }

@@ -1,6 +1,4 @@
-package timo.geometry;
-
-import timo.vector.Point;
+package weiche.geometry;
 
 import java.util.ArrayList;
 
@@ -32,7 +30,6 @@ public class Curve {
 	public String getType() {
 		return this.type;
 	}
-
 
 	// ENUM eindeutig vergleichbar
 	public enum Type {

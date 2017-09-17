@@ -1,6 +1,4 @@
-package timo.geometry;
-
-import timo.vector.Point;
+package weiche.geometry;
 
 import java.util.ArrayList;
 
@@ -9,7 +7,7 @@ public class Circle extends Curve {
 	double r; // radius
 
 	public Circle(Point center, double radius) {
-		c = new Point(center.getx(),center.gety(),0.);
+		c = new Point(center.getx(), center.gety(), 0.);
 		r = radius;
 	}
 
@@ -36,7 +34,7 @@ public class Circle extends Curve {
 	public String export_obj() {
 		String ausgabe = "";
 		ArrayList<Point> verts = this.getVerts(48);
-		for (int i = 0; i < verts.size()-1; i++) {
+		for (int i = 0; i < verts.size() - 1; i++) {
 			ausgabe += verts.get(i).export_obj();
 			ausgabe += verts.get((i + 1) % verts.size()).export_obj();
 			ausgabe += "f -1 -2\n";
