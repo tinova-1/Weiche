@@ -1,14 +1,13 @@
 package timo.geometry;
 
-import nils.geometry.Curve;
 import timo.vector.Point;
 
 import java.util.ArrayList;
 
 public class Body {
-	Curve.Type type;
+	String type;
 	
-	void setType (Curve.Type _type) {
+	void setType (String _type) {
 		this.type = _type;
 	}
 	

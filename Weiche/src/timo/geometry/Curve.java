@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Curve {
 	String name = "";
-	Type type;
+	String type = "";
 
 	public ArrayList<Point> getVerts(int res) {
 		ArrayList<Point> ausgabe = new ArrayList<Point>();
@@ -25,7 +25,7 @@ public class Curve {
 		return name;
 	}
 
-	public void setType(Type _type) {
+	public void setType(String _type) {
 		this.type = _type;
 	}
 
