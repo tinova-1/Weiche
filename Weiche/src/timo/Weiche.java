@@ -1,5 +1,6 @@
 package timo;
 
+import nils.model.Tie;
 import timo.components.Kleineisen;
 import timo.components.KleineisenCalculator;
 import timo.components.Rail_computing;

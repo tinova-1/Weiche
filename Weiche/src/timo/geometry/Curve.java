@@ -29,7 +29,7 @@ public class Curve {
 		this.type = _type;
 	}
 
-	public Type getType() {
+	public String getType() {
 		return this.type;
 	}
 
