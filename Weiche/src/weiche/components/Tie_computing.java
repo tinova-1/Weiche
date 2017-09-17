@@ -1,22 +1,22 @@
 package weiche.components;
 
-import timo.Weiche;
-import timo.geometry.Cube;
+import weiche.model.Weiche;
+import weiche.geometry.Cube;
 import weiche.geometry.Point;
 
 import java.util.ArrayList;
 
 public class Tie_computing {
 
-	public static double w_radius = Weiche.radius;
-	public static double winkel = Weiche.angle;
-	public static double l = Weiche.length;
-	public static double s_laenge = Weiche.tie_length;
-	public static double s_abstand = Weiche.tie_dist;
-	public static double s_breite = Weiche.tie_width;
-	public static double s_hoehe = Weiche.tie_height;
-	public static double verlaengerung = Weiche.verlaengerung;
-	public static double l_max = Weiche.longest_tie;
+	public static double w_radius = Weiche.getRadius();
+	public static double winkel = Weiche.getAngle();
+	public static double l = Weiche.getLength();
+	public static double s_laenge = Weiche.getTie_length();
+	public static double s_abstand = Weiche.getTie_dist();
+	public static double s_breite = Weiche.getTie_width();
+	public static double s_hoehe = Weiche.getTie_height();
+	public static double verlaengerung = Weiche.getVerlaengerung();
+	public static double l_max = Weiche.getLongest_tie();
 
 	public static void berechnen() {
 		ArrayList<Cube> weichenSchwellenband = weichenSchwellenband();

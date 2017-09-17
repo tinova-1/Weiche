@@ -1,6 +1,6 @@
 package weiche.components;
 
-import timo.Weiche;
+import weiche.model.Weiche;
 
 public class Tie {
 
@@ -11,7 +11,7 @@ public class Tie {
 		ypos = y;
 		rot = r;
 		len = l;
-		wid = Weiche.tie_width;
+		wid = Weiche.getTie_width();
 	}
 
 	void translate(double dx, double dy) {

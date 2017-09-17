@@ -1,7 +1,5 @@
 package weiche.geometry;
 
-import timo.geometry.Curve;
-
 import java.util.ArrayList;
 
 public class Vector {
@@ -91,9 +89,9 @@ public class Vector {
 		for (int i = 0; i < inters.size(); i++) {
 			Point p = inters.get(i);
 			double arc_angle = Math.atan((p.gety() - arc_center.gety()) / (p.getx() - arc_center.getx()));
-			//Periodizit�t des Tangens
-			if(p.getx()-arc_center.getx()<0.) {
-				arc_angle +=Math.PI;
+			// Periodizit�t des Tangens
+			if (p.getx() - arc_center.getx() < 0.) {
+				arc_angle += Math.PI;
 			}
 
 			// double arc_angle = Math

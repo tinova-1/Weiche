@@ -2,7 +2,7 @@ package weiche.components;
 
 import weiche.components.Kleineisen;
 import weiche.geometry.*;
-import weiche.model.Weiche;
+import weiche.model.*;
 
 import java.util.ArrayList;
 

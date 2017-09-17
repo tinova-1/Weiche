@@ -1,7 +1,5 @@
 package weiche.geometry;
 
-import timo.geometry.Curve;
-
 import java.util.ArrayList;
 
 public class Line extends Curve {

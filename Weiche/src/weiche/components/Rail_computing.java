@@ -19,7 +19,7 @@ public class Rail_computing {
 	public static void compute() {
 		// gauge = timo.Weiche.gauge + versatz;
 
-		r = Weiche.radius;
+		r = Weiche.getRadius();
 		r_outer = r + gauge / 2.;
 		r_inner = r - gauge / 2.;
 

@@ -1,7 +1,5 @@
 package weiche.geometry;
 
-import timo.geometry.Curve;
-
 public class Point extends Curve {
 
 	double x = 0., y = 0., z = 0.; // x y and z coordinates
