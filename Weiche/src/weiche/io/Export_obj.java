@@ -1,4 +1,4 @@
-package timo.io;
+package weiche.io;
 
 import timo.components.Kleineisen;
 import timo.Weiche;

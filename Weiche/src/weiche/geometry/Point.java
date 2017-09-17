@@ -1,6 +1,4 @@
-package timo.vector;
-
-import timo.geometry.Curve;
+package weiche.geometry;
 
 public class Point extends Curve {
 

@@ -1,21 +1,16 @@
-package timo.components;
+package weiche.components;
 
-import timo.Weiche;
-import timo.geometry.Arc;
-import timo.geometry.Circle;
-import timo.geometry.Curve;
-import timo.vector.Line;
-import timo.vector.Point;
-import timo.vector.Vector;
+import weiche.model.Weiche;
+import weiche.geometry.*;
 
 public class Rail_computing {
-	public static double a = Weiche.angle;
-	public static double len = Weiche.length;
-	public static double gauge = Weiche.gauge;
-	public static double flange = Weiche.flange_freedom;
-	public static double frog = Weiche.frog_length;
-	public static double guide = Weiche.guide_length;
-	public static double approach = Weiche.verlaengerung;
+	public  double a = Weiche.getAngle();
+	public static double len = Weiche.getLength();
+	public static double gauge = Weiche.getGauge();
+	public static double flange = Weiche.getFlange_freedom();
+	public static double frog = Weiche.getFrog_length();
+	public static double guide = Weiche.getGuide_length();
+	public static double approach = Weiche.getVerlaengerung();
 
 	public static double r;
 	public static double r_outer;
@@ -24,7 +19,7 @@ public class Rail_computing {
 	public static void compute() {
 		// gauge = timo.Weiche.gauge + versatz;
 
-		r = Weiche.radius;
+		r = Weiche.getRadius();
 		r_outer = r + gauge / 2.;
 		r_inner = r - gauge / 2.;
 
